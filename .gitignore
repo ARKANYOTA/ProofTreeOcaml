@@ -1,0 +1,9 @@
+*.sty
+*.aux
+*.dvi
+*.log
+*.nav
+*.out
+*.snm
+*.tex
+*.toc
