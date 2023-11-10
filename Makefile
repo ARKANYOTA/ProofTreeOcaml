@@ -6,4 +6,4 @@ main.tex: main.ml
 	ocaml main.ml > main.tex
 
 clean:
-	rm -rf *.aux *.dvi *.log *.nav *.out *.snm *.tex *.toc
+	rm -rf *.aux *.dvi *.log *.nav *.out *.snm main.tex *.toc
