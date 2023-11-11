@@ -347,7 +347,8 @@ printf "%s" (
 "\\input{packages.tex}"^
 "\n\\begin{document}"^
 "\n\\maketitle"^
-"\n\begin{center}\LARGE{\textcolor{red}{Ce docuement contient des coquilles, des erreurs et des fautes d'orthographe. Merci de me les signaler par github ou par message discord.}}\end{center}"^
+"\n\\begin{center}\\LARGE{\\textcolor{red}{Ce document contient des coquilles, des erreurs et des fautes d'orthographe. Merci de me les signaler par \\href{http://www.github.com/ARKANYOTA/ProofTreeOcaml}{Github}/message discord/\\href{mailto:arkanyota@icloud.com}{mail}.}}\\end{center}"^
+"\n\\begin{center}\\large{Vous pouvez aussi m'aider à remplir ce document. ;)}\\end{center}"^
 "\n\\tableofcontents"
 );;
 
