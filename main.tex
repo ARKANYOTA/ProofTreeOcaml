@@ -1,0 +1,128 @@
+\input{packages.tex}
+\begin{document}
+\maketitle
+\begin{center}
+	\LARGE{\textcolor{red}{Ce docuement contient des coquilles, des erreurs et des fautes d'orthographe. Merci de me les signaler par github ou par message discord.}}
+\end{center}
+\tableofcontents
+\section{Cours}
+
+\subsection{Modus Ponens}
+\begin{prooftree}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$(p \rightarrow q), p \vdash (p \rightarrow q)$}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$(p \rightarrow q), p \vdash p$}
+  \RightLabel{$\rightarrow_e \textcolor{gray}{\;{p}}$}
+  \BinaryInfC{$(p \rightarrow q), p \vdash q$}
+
+\end{prooftree}
+\subsection{Modus Tollens}
+\begin{prooftree}
+  \AxiomC{$(\text{Modus Ponens})$}
+  \RightLabel{$ $}
+  \UnaryInfC{$(p \rightarrow q), \neg q, p \vdash q$}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$(p \rightarrow q), \neg q, p \vdash \neg q$}
+  \RightLabel{$\neg_e \textcolor{gray}{\;{q}}$}
+  \BinaryInfC{$(p \rightarrow q), \neg q, p \vdash \bot$}
+  \RightLabel{$\neg_i$}
+  \UnaryInfC{$(p \rightarrow q), \neg q \vdash \neg p$}
+
+\end{prooftree}
+\subsection{Syllogisme disjonctif}
+\begin{prooftree}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$(p \vee q), \neg p \vdash (p \vee q)$}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$(p \vee q), \neg p, p, \neg q \vdash \neg p$}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$(p \vee q), \neg p, p, \neg q \vdash p$}
+  \RightLabel{$\neg_e \textcolor{gray}{\;{p}}$}
+  \BinaryInfC{$(p \vee q), \neg p, p, \neg q \vdash \bot$}
+  \RightLabel{$\bot$}
+  \UnaryInfC{$(p \vee q), \neg p, p \vdash q$}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$(p \vee q), \neg p, q \vdash q$}
+  \RightLabel{$\vee_e \textcolor{gray}{\;{p} ,{q}}$}
+  \TrinaryInfC{$(p \vee q), \neg p \vdash q$}
+
+\end{prooftree}
+\subsection{Syllogisme barbara}
+\begin{prooftree}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$(p \rightarrow q), (q \rightarrow r), p \vdash (q \rightarrow r)$}
+  \AxiomC{$(\text{Modus Ponens})$}
+  \RightLabel{$ $}
+  \UnaryInfC{$(p \rightarrow q), (q \rightarrow r), p \vdash q$}
+  \RightLabel{$\rightarrow_e \textcolor{gray}{\;{q}}$}
+  \BinaryInfC{$(p \rightarrow q), (q \rightarrow r), p \vdash r$}
+  \RightLabel{$\rightarrow_i$}
+  \UnaryInfC{$(p \rightarrow q), (q \rightarrow r) \vdash (p \rightarrow r)$}
+
+\end{prooftree}
+\subsection{Syllogisme Festino}
+\begin{prooftree}
+  \AxiomC{$(\text{Modus Ponens})$}
+  \RightLabel{$ $}
+  \UnaryInfC{$(p \rightarrow \neg q), q, p \vdash \neg q$}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$(p \rightarrow \neg q), q, p \vdash q$}
+  \RightLabel{$\neg_e \textcolor{gray}{\;{q}}$}
+  \BinaryInfC{$(p \rightarrow \neg q), q, p \vdash \bot$}
+  \RightLabel{$\neg_i$}
+  \UnaryInfC{$(p \rightarrow \neg q), q \vdash \neg p$}
+
+\end{prooftree}
+\subsection{Syllogisme Cesare}
+\begin{prooftree}
+  \AxiomC{$(\text{Modus Ponens})$}
+  \RightLabel{$ $}
+  \UnaryInfC{$(p \rightarrow \neg q), (r \rightarrow q), r, p \vdash \neg q$}
+  \AxiomC{$(\text{Modus Ponens})$}
+  \RightLabel{$ $}
+  \UnaryInfC{$(p \rightarrow \neg q), (r \rightarrow q), r, p \vdash q$}
+  \RightLabel{$\neg_e \textcolor{gray}{\;{q}}$}
+  \BinaryInfC{$(p \rightarrow \neg q), (r \rightarrow q), r, p \vdash \bot$}
+  \RightLabel{$\neg_i$}
+  \UnaryInfC{$(p \rightarrow \neg q), (r \rightarrow q), r \vdash \neg p$}
+  \RightLabel{$\rightarrow_i$}
+  \UnaryInfC{$(p \rightarrow \neg q), (r \rightarrow q) \vdash (r \rightarrow \neg p)$}
+
+\end{prooftree}
+\subsection{Tiers Exclu}
+\begin{prooftree}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$\neg (\neg p \vee p), p \vdash \neg (\neg p \vee p)$}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$\neg (\neg p \vee p), p \vdash p$}
+  \RightLabel{$\vee_{i}^{d}$}
+  \UnaryInfC{$\neg (\neg p \vee p), p \vdash (\neg p \vee p)$}
+  \RightLabel{$\neg_e \textcolor{gray}{\;{(\neg p \vee p)}}$}
+  \BinaryInfC{$\neg (\neg p \vee p), p \vdash \bot$}
+  \RightLabel{$\neg_i$}
+  \UnaryInfC{$\neg (\neg p \vee p) \vdash \neg p$}
+  \AxiomC{$(\text{Idem})$}
+  \RightLabel{$\bot$}
+  \UnaryInfC{$\neg (\neg p \vee p) \vdash p$}
+  \RightLabel{$\neg_e$}
+  \BinaryInfC{$\neg (\neg p \vee p) \vdash \bot$}
+  \RightLabel{$\neg_i$}
+  \UnaryInfC{$ \vdash (\neg p \vee p)$}
+
+\end{prooftree}
+\section{Exercices}
+
+\subsection{Exo 13.1}
+\begin{prooftree}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$\forall x.\varphi \vdash \forall x.\varphi$}
+  \RightLabel{$\forall_e \textcolor{gray}{\;{x}}$}
+  \UnaryInfC{$\forall x.\varphi \vdash \varphi$}
+  \RightLabel{$\exists_i$}
+  \UnaryInfC{$\forall x.\varphi \vdash \exists x.\varphi$}
+
+\end{prooftree}
+\subsection{Exo 13.2}
+\begin{prooftree}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$\exists z.\forall x.\varphi(z,x) \vdash \exists z.\forall x.\varphi(z,x)$}
+  \AxiomC{} \RightLabel{$\text{ax}$} \UnaryInfC{$\exists z.\forall x.\varphi(z,x), \forall x.\varphi(z,x) \vdash \forall x.\varphi(z,x)$}
+  \RightLabel{$\forall_e \textcolor{gray}{\;{[y \rightarrow x]}}$}
+  \UnaryInfC{$\exists z.\forall x.\varphi(z,x), \forall x.\varphi(z,x) \vdash \varphi(z,y)$}
+  \RightLabel{$\exists_i \textcolor{gray}{\;{[x \rightarrow y]}}$}
+  \UnaryInfC{$\exists z.\forall x.\varphi(z,x), \forall x.\varphi(z,x) \vdash \exists x.\varphi(x,y)$}
+  \RightLabel{$\forall_i$}
+  \UnaryInfC{$\exists z.\forall x.\varphi(z,x), \forall x.\varphi(z,x) \vdash \forall y.\exists x.\varphi(x,y)$}
+  \RightLabel{$\exists_e \textcolor{gray}{\;{x} ,{\varphi(z,x)}}$}
+  \BinaryInfC{$\exists z.\forall x.\varphi(z,x) \vdash \forall y.\exists x.\varphi(x,y)$}
+
+\end{prooftree}
+\end{document}
